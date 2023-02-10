@@ -3,104 +3,113 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: reira <reira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 22:17:56 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/01/16 21:45:14 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:05:56 by reira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen_null(const char *s);
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+// size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+// {
+// 	size_t	srclen;
+// 	size_t	i;
+
+// 	srclen = ft_strlen(src);
+// 	i = 0;
+// 	while (src[i] != '\0' && i+1< dstsize)
+// 	{
+// 		dst[i] = src[i];
+// 		i++;
+// 	}
+// 	if (dstsize != 0)
+// 	{
+// 		dst[i] = '\0';
+// 	}
+// 	return (srclen);
+// }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dstlen;
 	size_t	srclen;
 	size_t	dst_cat;
-	size_t	i;
 
 	srclen = ft_strlen(src);
-	dstlen = ft_strlen_null(dst);
-	if (dstlen < dstsize)
-	{
-		i = 0;
-		dst_cat = dstsize - dstlen;
-		while (dst_cat)
-		{
-			dst[dstlen++] = src[i++];
-			dst_cat--;
-		}
-		dst[dstlen - 1] = '\0';
-		return (dstlen - i + srclen);
-	}
-	else
-	{
+	if (dst == NULL && dstsize == 0)
+		return (srclen);
+	dstlen = ft_strlen(dst);
+	if (dstlen >= dstsize)
 		return (srclen + dstsize);
-	}
+	dst_cat = dstsize - dstlen;
+	ft_strlcpy(dst + dstlen, src, dst_cat);
+	return (dstlen + srclen);
 }
 
-static size_t	ft_strlen_null(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+// {
+// 	size_t	i;
+// 	size_t	d_size;
+// 	size_t	s_size;
 
-	i = 0;
-	if (s == NULL)
-	{
-		return (0);
-	}
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+// 	if (dst == NULL && dstsize == 0)
+// 		return (ft_strlen(src));
+// 	d_size = ft_strlen(dst);
+// 	s_size = ft_strlen(src);
+// 	i = 0;
+// 	if (d_size >= dstsize)
+// 		return (dstsize + s_size);
+// 	while (src[i] != '\0' && i < (dstsize - d_size - 1))
+// 	{
+// 		dst[d_size + i] = src[i];
+// 		i++;
+// 	}
+// 	dst[d_size + i] = '\0';
+// 	return (d_size + s_size);
+// }
 
-// #include <stdio.h>
-// #include <string.h>
-// #include <stdlib.h>
 // int	main(void)
 // {
-// 	char dst1[] = "42tokyo";
-// 	char src1[] = "!!!";
-// 	char dst2[] = "42tokyo";
-// 	char src2[] = "!!!";
-// 	char *dst3 = calloc(100, sizeof(char));
-// 	char *dst4 = calloc(100, sizeof(char));
-// 	char *src3 = calloc(100, sizeof(char));
-// 	char *src4 = calloc(100, sizeof(char));
-// printf("%lu\n", ft_strlcat(dst1, src1, 5));
-// printf("%s\n", dst1);
-// printf("%lu\n", ft_strlcat(NULL, NULL, 0));
-// printf("%lu\n", ft_strlcat(NULL, NULL, 5));
-// printf("%s\n", dst1);
-// printf("%lu\n", ft_strlcat(dst1, NULL, 3));
-// printf("%s\n", dst1);
-// printf("%lu\n", ft_strlcat(dst1, NULL, 5));
-// printf("%s\n", dst1);
-// printf("%lu\n", ft_strlcat(NULL, src1, 3));
-// printf("%s\n", dst1);
-// printf("%lu\n", ft_strlcat(NULL, src1, 0));
-// printf("%lu\n", ft_strlcat(dst1, NULL, 0));
-// printf("%lu\n", strlcat(dst2, src2, 5));
-// printf("%s\n", dst2);
-// printf("%lu\n", strlcat(NULL, NULL, 0));
-// printf("%lu\n", strlcat(NULL, NULL, 5));
-// printf("%s\n", dst2);
-// printf("%lu\n", strlcat(dst2, NULL, 3));
-// printf("%s\n", dst2);
-// printf("%lu\n", strlcat(dst2, NULL, 5));
-// printf("%s\n", dst2);
-// printf("%lu\n", strlcat(NULL, src2, 3));
-// printf("%s\n", dst2);
-// printf("%lu\n", strlcat(NULL, src2, 0));
-// printf("%lu\n", strlcat(dst2, NULL, 0));
-// printf("%lu\n", ft_strlcat(dst3, "", 100));
-// printf("%lu\n",ft_strlen_null(""));
-// printf("%lu\n",ft_strlen_null(dst3));
-// printf("%lu\n", ft_strlcat(dst3, "", 50));
-// printf("%lu\n",strlcat(dst4, "", 100));
-// printf("%lu\n", strlcat(dst4, "", 50));
-// return (0);
+// 	char dst1[100] = "42tokyo";
+// 	char src1[] = "!!";
+// 	char dst2[100] = "42tokyo";
+// 	char src2[] = "!!";
+// 	size_t i;
+// 	size_t j;
+// 	size_t k;
+// char *dst3 = calloc(100, sizeof(char));
+// char *dst4 = calloc(100, sizeof(char));
+// char *src3 = calloc(100, sizeof(char));
+// char *src4 = calloc(100, sizeof(char));
+// i=0;
+// while(i<100)
+// {
+// printf("original= %lu\n", strlcat(dst1, src1, i));
+// 	printf("original= %s\n", dst1);
+// 	printf("ft= %lu\n", ft_strlcat(dst2, src2, i));
+// 	printf("ft= %s\n", dst2);
+// 	j=0;
+// 	k=0;
+// 	if(strncmp(dst1,dst2,i)!=0)
+// 	{
+// 		printf("No");
+// 		break;
+// 	}
+// 	i++;
+// }
+// 	return (0);
 // }
