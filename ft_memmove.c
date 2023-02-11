@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:57:12 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/01/16 15:36:37 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/02/11 14:14:52 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*casted_dst;
 	unsigned char	*casted_src;
-	size_t			i;
 
 	casted_dst = (unsigned char *)dst;
 	casted_src = (unsigned char *)src;
-	i = 0;
 	if (dst == src)
 		return (dst);
 	if (dst < src)
-	{
 		ft_memcpy(casted_dst, casted_src, len);
-	}
-	else if (dst > src)
+	else
 	{
 		while (len > 0)
 		{

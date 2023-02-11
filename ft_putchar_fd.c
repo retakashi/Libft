@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 17:28:41 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/02/07 16:17:46 by rtakashi         ###   ########.fr       */
+/*   Created: 2023/01/21 21:01:24 by rtakashi          #+#    #+#             */
+/*   Updated: 2023/02/02 21:08:26 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
 
-// #include <string.h>
-// #include<stdio.h>
-
+// #include <stdio.h>
+// #include <fcntl.h>
 // int	main(void)
 // {
-// 	char dst1[]="42tokyo";
-// 	char dst2[]="42tokyo";
-// 	printf("%zu\n", ft_strlen(dst1));
-// 	printf("%zu\n", strlen(dst2));
-// 	printf("%zu\n", ft_strlen(NULL));
-// 	printf("%zu\n", strlen(NULL));
+// 	int fd = open("temp.txt", O_WRONLY);
+// 	int fd2 = open("output.txt", O_WRONLY);
+// 	ft_putchar_fd('a', 2);
+// ft_putchar_fd('c', fd);
+// ft_putchar_fd('o', 1);
+// ft_putchar_fd('e', 2);
+// printf("stdout %d", STDOUT_FILENO);
+// printf("stdout %d", STDERR_FILENO);
+// printf("stdin  %d", STDIN_FILENO);
+// printf("fd : %d, fd2 :%d", fd, fd2);
 // 	return (0);
 // }

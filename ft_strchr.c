@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:51:08 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/01/19 17:16:01 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/01/25 20:25:48 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char)c)
-		{
 			return (&str[i]);
-		}
 		i++;
 	}
 	if (c == '\0')

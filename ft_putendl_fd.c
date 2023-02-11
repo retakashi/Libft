@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 17:28:41 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/02/07 16:17:46 by rtakashi         ###   ########.fr       */
+/*   Created: 2023/01/31 21:12:17 by rtakashi          #+#    #+#             */
+/*   Updated: 2023/02/09 17:11:12 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (s == NULL)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-
-// #include <string.h>
-// #include<stdio.h>
 
 // int	main(void)
 // {
-// 	char dst1[]="42tokyo";
-// 	char dst2[]="42tokyo";
-// 	printf("%zu\n", ft_strlen(dst1));
-// 	printf("%zu\n", strlen(dst2));
-// 	printf("%zu\n", ft_strlen(NULL));
-// 	printf("%zu\n", strlen(NULL));
+// 	char s[]="";
+// 	ft_putendl_fd(s,1);
 // 	return (0);
 // }

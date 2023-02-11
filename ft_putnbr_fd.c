@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 17:28:41 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/02/07 16:17:46 by rtakashi         ###   ########.fr       */
+/*   Created: 2023/01/31 21:23:44 by rtakashi          #+#    #+#             */
+/*   Updated: 2023/02/08 18:02:36 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+static void	ft_casted_putnbr(unsigned int n, int fd);
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_casted_putnbr((unsigned int)-n, fd);
+	}
+	else
+		ft_casted_putnbr(n, fd);
 }
 
-// #include <string.h>
-// #include<stdio.h>
+static void	ft_casted_putnbr(unsigned int n, int fd)
+{
+	if (n > 9)
+	{
+		ft_casted_putnbr(n / 10, fd);
+		ft_casted_putnbr(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
+}
 
+// #include <stdio.h>
 // int	main(void)
 // {
-// 	char dst1[]="42tokyo";
-// 	char dst2[]="42tokyo";
-// 	printf("%zu\n", ft_strlen(dst1));
-// 	printf("%zu\n", strlen(dst2));
-// 	printf("%zu\n", ft_strlen(NULL));
-// 	printf("%zu\n", strlen(NULL));
+// 	int	i;
+
+// 	i = -1;
+// 	ft_putnbr_fd(i, 1);
 // 	return (0);
 // }

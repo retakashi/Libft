@@ -6,13 +6,11 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:11:45 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/01/19 17:16:31 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:35:30 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -26,26 +24,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (i <= strlen)
 	{
 		if (str[strlen - i] == (char)c)
-		{
 			return (&str[strlen - i]);
-		}
 		i++;
 	}
-	if (c == '\0')
-		return (&str[strlen]);
 	return (NULL);
-}
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
 }
 
 // #include <string.h>
@@ -54,13 +36,13 @@ static size_t	ft_strlen(const char *s)
 // {
 // 	char str1[]="42tokyot!!";
 // 	char str2[]="";
-// printf("%s\n", ft_strrchr(str1, 'o'));
+// printf("ft= %s\n", ft_strrchr(str1, 'o'));
 // printf("%s\n", strrchr(str1, 'o'));
-// printf("%s\n", ft_strrchr(str1, '\0'));
+// printf("ft= %s\n", ft_strrchr(str1, '\0'));
 // printf("%s\n", strrchr(str1, '\0'));
-// printf("%s\n", ft_strrchr(str2, '2'));
+// printf("ft= %s\n", ft_strrchr(str2, '2'));
 // printf("%s\n", strrchr(str2, '2'));
-// printf("%s\n", ft_strrchr(str2, '\0'));
+// printf("ft= %s\n", ft_strrchr(str2, '\0'));
 // printf("%s\n", strrchr(str2, '\0'));
 // ----------segmentation fault----------
 // printf("%s\n", ft_strrchr(NULL, '\0'));

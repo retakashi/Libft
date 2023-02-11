@@ -6,7 +6,7 @@
 /*   By: rtakashi <rtakashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:05:26 by rtakashi          #+#    #+#             */
-/*   Updated: 2023/01/20 19:00:00 by rtakashi         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:16:38 by rtakashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static size_t	check_sign(const char *str, size_t i, int *neg);
 
 int	ft_atoi(const char *str)
 {
-	size_t		i;
-	int			neg;
-	long int	num;
+	size_t	i;
+	int		neg;
+	long	num;
 
 	i = 0;
 	neg = 0;
@@ -46,9 +46,7 @@ int	ft_atoi(const char *str)
 static size_t	check_space(const char *str, size_t i)
 {
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -59,10 +57,8 @@ static size_t	check_sign(const char *str, size_t i, int *neg)
 		*neg += 1;
 		i++;
 	}
-	if (str[i] == '+')
-	{
+	else if (str[i] == '+')
 		i++;
-	}
 	return (i);
 }
 
@@ -71,6 +67,10 @@ static size_t	check_sign(const char *str, size_t i, int *neg)
 // int	main(void)
 // {
 // 	printf("-----iroiro-----\n");
+// 	printf("   atoi=[%d]\n", atoi("+-42"));
+// 	printf("ft_atoi=[%d]\n", ft_atoi("+-42"));
+// 	printf("   atoi=[%d]\n", atoi("-+42"));
+// 	printf("ft_atoi=[%d]\n", ft_atoi("-+42"));
 // 	printf("   atoi(LONG_MIN+1)=[%d]\n", atoi("-9223372036854775807"));
 // 	printf("ft_atoi(LONG_MIN+1)=[%d]\n", ft_atoi("-9223372036854775807"));
 // 	printf("   atoi(LONG_MAX-1)=[%d]\n", atoi("9223372036854775806"));
