@@ -40,7 +40,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // {
 // 	char	*arr;
 // 	int		i;
-// 	char	s1[]= "42tokyo";
+// 	char	s1[]= "42tok\nyo";
 // 	char	s2[]= "abc!!!";
 
 // 	i = 0;
@@ -48,5 +48,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	while (i < 10)
 // 		printf("%c\n", arr[i++]);
 // 	printf("%s\n", arr);
+// 	free(arr);
 // 	return (0);
 // }
