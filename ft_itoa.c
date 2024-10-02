@@ -84,16 +84,20 @@ static unsigned int	get_digit(int n)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char	*arr;
-// 	int		n;
-// 	int i;
+// 	char	*arr1;
+// 	char	*arr2;
+// 	char	*arr3;
+// 	char	*arr4;
+// 	char	*arr5;
+// 	char	*arr6;
+// 	arr1 = ft_itoa(1);
+// 	arr2 = ft_itoa(INT_MIN);
+// 	arr3 = ft_itoa(INT_MAX);
+// 	arr4 = ft_itoa(0);
 
-// 	i=0;
-// 	n = -22;
-// 	arr = ft_itoa(n);
-// 	printf("digit= %d\n", get_digit(n));
-// 	printf("arr= %s\n", arr);
-// 	while(i<5)
-// 	printf("arr[]=%c\n",arr[i++]);
+// 	printf("arr1(1): %s\n",arr1);
+// 	printf("arr2(INT_MAX): %s\n",arr2);
+// 	printf("arr3(INT_MIN): %s\n",arr3);
+// 	printf("arr4(0): %s\n",arr4);	
 // 	return (0);
 // }
