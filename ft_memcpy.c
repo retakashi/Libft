@@ -37,20 +37,19 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 // int	main(void)
 // {
 // 	char dst1[]="42tokyo";
-	// char src1[]="hello";
-	// char dst2[]="42tokyo";
-	// char src2[]="hello";
-	// printf("%s\n", ft_memcpy(dst1, src1, 5));
-	// printf("%s\n", ft_memcpy(dst1, src1, 10));
-	// printf("%s\n", ft_memcpy(dst1, NULL, 3));
-	// printf("%s\n", ft_memcpy(NULL, src1, 3));
-	// printf("%s\n", ft_memcpy(NULL, NULL, 3));
-	// printf("%s\n", ft_memcpy(NULL, NULL, 0));
-	// printf("%s\n", memcpy(dst2, src2, 5));
-	// printf("%s\n", memcpy(dst2, src2, 10));
-	// printf("%s\n", memcpy(dst2, NULL, 3));
-	// printf("%s\n", memcpy(NULL, src2, 3));
-	// printf("%s\n", memcpy(NULL, NULL, 3));
-	// printf("%s\n", memcpy(NULL, NULL, 0));
+// 	char src1[]="hello";
+// 	char dst2[]="42tokyo";
+// 	char src2[]="hello";
+// 	printf("%s\n", memcpy(dst2, src2, 5));
+// 	printf("ft: %s\n", ft_memcpy(dst1, src1, 5));
+// 	//↓SEGV
+// 	printf("%s\n", memcpy(dst2, NULL, 3));
+// 	printf("%s\n", ft_memcpy(dst1, NULL, 3));
+// 	printf("%s\n", memcpy(NULL, src2, 3));
+// 	printf("%s\n", ft_memcpy(NULL, src1, 3));
+// 	printf("%s\n", memcpy(NULL, NULL, 3));
+// 	printf("%s\n", ft_memcpy(NULL, NULL, 3));
+// 	printf("%s\n", memcpy(NULL, NULL, 0));
+// 	printf("%s\n", ft_memcpy(NULL, NULL, 0));
 // 	return (0);
 // }
