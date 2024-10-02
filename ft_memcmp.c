@@ -48,9 +48,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // printf("ft=%d\n", ft_memcmp(str1, str2, 0));
 // printf("%d\n", memcmp(NULL, NULL, 0));
 // printf("ft=%d\n", ft_memcmp(NULL, NULL, 0));
+// //↓stack-buffer-overflow
 // printf("%d\n", memcmp(str3, str4, sizeof(str3)));
 // printf("ft=%d\n", ft_memcmp(str3, str4, sizeof(str3)));
-// ↓segmentation fault
+// // ↓segmentation fault
 // printf("%d\n", memcmp(NULL, str2, 5));
 // printf("ft=%d\n", ft_memcmp(NULL, str2, 5));
 // printf("%d\n", memcmp(str1, NULL, 5));
