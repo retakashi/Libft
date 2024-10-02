@@ -25,6 +25,9 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
+// #include <stdio.h>
+// #include <string.h>
+
 // int	main(void)
 // {
 // 	char	*s1;
@@ -35,5 +38,10 @@ char	*ft_strdup(const char *s1)
 // 	s2 = ft_strdup(src);
 // 	printf("strdup= %s\n", s1);
 // 	printf("ft_strdup= %s\n", s2);
+// 	//SEGV
+// 	s1 = strdup(NULL);
+// 	s2 = ft_strdup(NULL);
+// 	printf("strdup= %s\n", s1);
+// 	printf("ft_strdup= %s\n", s2);	
 // 	return (0);
 // }
