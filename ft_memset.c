@@ -37,21 +37,23 @@ void	*ft_memset(void *b, int c, size_t len)
 // 	char dst1[]="42tokyo";
 // 	char dst2[]="42tokyo";
 
-// printf("%s\n", ft_memset(dst1, '!', 3));
-// printf("%s\n", ft_memset(dst1, '!', 10));
-// printf("%s\n", ft_memset(dst1, NULL, 0));
-// printf("%s\n", ft_memset(dst1, NULL, 3));
-// printf("%s\n", ft_memset(NULL, '!', 0));
-// printf("%s\n", ft_memset(NULL, '!', 3));
-// printf("%s\n", ft_memset(NULL, NULL, 3));
-// printf("%s\n", ft_memset(NULL, NULL, 0));
 // printf("%s\n", memset(dst2, '!', 3));
-// printf("%s\n", memset(dst2, '!', 10));
-// printf("%s\n", memset(dst2, NULL, 0));
-// printf("%s\n", memset(dst2, NULL, 3));
-// printf("%s\n", memset(NULL, '!', 0));
+// printf("ft: %s\n", ft_memset(dst1, '!', 3));
+// //↓SEGV
 // printf("%s\n", memset(NULL, '!', 3));
+// printf("ft: %s\n", ft_memset(NULL, '!', 3));
 // printf("%s\n", memset(NULL, NULL, 3));
+// printf("ft: %s\n", ft_memset(NULL, NULL, 3));
 // printf("%s\n", memset(NULL, NULL, 0));
+// printf("ft: %s\n", ft_memset(NULL, NULL, 0));
+// //↓stack-buffer-overflow
+// printf("%s\n", memset(dst2, '!', 10));
+// printf("ft: %s\n", ft_memset(dst1, '!', 10));
+// printf("%s\n", memset(dst2, NULL, 0));
+// printf("ft: %s\n", ft_memset(dst1, NULL, 0));
+// printf("%s\n", memset(dst2, NULL, 3));
+// printf("ft: %s\n", ft_memset(dst1, NULL, 3));
+// printf("%s\n", memset(NULL, '!', 0));
+// printf("ft: %s\n", ft_memset(NULL, '!', 0));
 // 	return (0);
 // }
