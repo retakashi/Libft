@@ -44,21 +44,23 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char dst2[]="42tokyo";
 // 	char src2[]="hello";
 
-// printf("%s\n", ft_memmove(dst1, src1, 3));
-// printf("%s\n", ft_memmove(dst1, src1, 10));
-// printf("%s\n", ft_memmove(dst1, NULL, 0));
-// printf("%s\n", ft_memmove(dst1, NULL, 3));
-// printf("%s\n", ft_memmove(NULL, src1, 0));
-// printf("%s\n", ft_memmove(NULL, src1, 3));
-// printf("%s\n", ft_memmove(NULL, NULL, 3));
-// printf("%s\n", ft_memmove(NULL, NULL, 0));
 // printf("%s\n", memmove(dst2, src2, 3));
-// printf("%s\n", memmove(dst2, src2, 10));
-// printf("%s\n", memmove(dst2, NULL, 0));
-// printf("%s\n", memmove(dst2, NULL, 3));
-// printf("%s\n", memmove(NULL, src2, 0));
-// printf("%s\n", memmove(NULL, src2, 3));
-// printf("%s\n", memmove(NULL, NULL, 3));
+// printf("ft: %s\n", ft_memmove(dst1, src1, 3));
 // printf("%s\n", memmove(NULL, NULL, 0));
+// printf("%s\n", ft_memmove(NULL, NULL, 0));
+// printf("%s\n", memmove(NULL, NULL, 3));
+// printf("%s\n", ft_memmove(NULL, NULL, 3));
+// printf("%s\n", memmove(NULL, src2, 0));
+// printf("%s\n", ft_memmove(NULL, src1, 0));
+// //↓stack-buffer-overflow
+// printf("%s\n", memmove(dst2, src2, 10));
+// printf("ft: %s\n", ft_memmove(dst1, src1, 10));
+// //↓SEGV
+// printf("%s\n", memmove(dst2, NULL, 0));
+// printf("%s\n", ft_memmove(dst1, NULL, 0));
+// printf("%s\n", memmove(dst2, NULL, 3));
+// printf("%s\n", ft_memmove(dst1, NULL, 3));
+// printf("%s\n", memmove(NULL, src2, 3));
+// printf("%s\n", ft_memmove(NULL, src1, 3));
 // 	return (0);
 // }
