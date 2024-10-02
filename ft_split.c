@@ -104,7 +104,12 @@ static char	**ft_free(char **ans)
 // 	word = word_count(s, 'a');
 // 	ans = ft_split(s, 'a');
 // 	while (i < word)
-// 		printf("%s\n", ans[i++]);
-// system("leaks a.out");
+// 	{
+// 		printf("%s\n", ans[i]);
+// 		free(ans[i]);
+// 		i++;
+// 	}
+// 	free(ans);
+// 	// system("leaks a.out");
 // 	return (0);
 // }
