@@ -8,6 +8,8 @@ macOS
 
 ## Usage
 Please uncomment the main function in the .c file you want to use before using it.
+```bash
 git clone ...
 cd libft
+```
 ![gif](https://github.com/retakashi/Libft/blob/master/libft.gif)
